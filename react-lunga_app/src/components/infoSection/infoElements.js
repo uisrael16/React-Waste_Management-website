@@ -58,6 +58,15 @@ export const TopLine = styled.p`
     text-transform: uppercase;
     margin-bottom: 16px;
 `
+export const TopLine2 = styled.p`
+    color: #01bf71;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 700;
+    letter-spacing: 1.4px; 
+    text-transform: uppercase;
+    margin-bottom: 16px;
+`
 export const Heading = styled.h1`
     color: #000;
     margin-bottom: 24px;
@@ -75,6 +84,17 @@ export const Heading = styled.h1`
 `
 
 export const Subtitle = styled.p`
+    max-width: 440px;
+    margin-bottom: 35px;
+    font-size: 18px; 
+    text-align: justify; /* For Edge */
+//    -moz-text-align-last: justify; /* For Firefox prior 58.0 */
+    text-align-last: justify;
+    line-height: 24px;
+    color: ${({darkText}) => (darkText ? '#010606' : "#fff")};
+`
+
+export const Subtitle2 = styled.p`
     max-width: 440px;
     margin-bottom: 35px;
     font-size: 18px; 

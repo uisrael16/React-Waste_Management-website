@@ -9,6 +9,7 @@ export const HeroContainer = styled.div`
     align-items: center;
     padding: 0 30px;
     height: 800px;
+    width: center;
     position: relative;
     z-index: 1;
 
@@ -34,7 +35,7 @@ export const HeroBg = styled.div`
     overflow: hidden;
 `
 export const VideoBg = styled.video`
-    width: 99%;
+    width: 100%;
     height: 100%;
     left: 2;
     -a-object-fit: cover;
@@ -51,17 +52,160 @@ export const HeroContent = styled.div`
     flex-direction: column;
     align-items: center;
 `
+
 export const HeroH1 = styled.h1`
     color: #7FFF00;
-    font-size: 48px;
+    font-size: 150%;
+    font-weight: 900;
     text-align: center;
+    animation: text_reveal_name 5s ease forwards; 
+    animation-delay: 3s;
+    display: inline-block;
+    padding: 10px 30px;
+    color:white;
+    background-color: transparent;
+     border: 2px solid white;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: .1.5rem;
+    margin-top: 36px;
+    transition: .3s ease;
+    transition-property: background-color, color;
+    &:hover {
+        color: #white;
+        background-color: white;
+    }
+  
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 10xp;
+    font-family: 'Montserrat', sans-serif;
+}
+a{
+    text-decoration: none; 
+}
+.container{
+    min-height: 100vh;
+    width : 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.heroH1 {
+
+    background-size: cover;
+    background-position: top center;
+    position: relative;
+    z-index: 1;
+}
+
+#heroH1  .heroH1 {
+    
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px;
+    justify-content: flex-start;
+}
+.heroH1 {
+    display: block;
+    width:fit-content;
+    font-size: 4rem;
+    position: relative;
+    color: transparent;
+    animation: text_reveal 5s ease forwards;
+    animation-delay: 1s;
+}
+.heroH1 :nth-child(1){
+    animation-delay: 1s;
+}
+.heroH1 :nth-child(2){
+    animation-delay: 2s;
+}
+.heroH1 :nth-child(3){
+    animation: text_reveal_name 5s ease forwards; 
+    animation-delay: 3s;
+}
+.heroH1  span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    font-weight: 900;
+    background-color: #01BF71;
+    animation: text_reveal_box 1s ease;
+    animation-delay: .5s;
+}
+.heroH1 :nth-child(1) span {
+    animation-delay: .5s;
+}
+.heroH1 :nth-child(2) span {
+    animation-delay: 1.5s;
+}
+.heroH1  h1:nth-child(3) span {
+    animation-delay: 2.5s;
+}
+.heroH1  .cta {
+    display: inline-block;
+    padding: 10px 30px;
+    color:white;
+    background-color: transparent;
+    border: 2px solid #01BF71;
+    font-size: 2rem;
+    width: 100%;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    margin-top: 36px;
+    transition: .3s ease;
+    transition-property: background-color, color;
+}
+.heroH1 .cta:hover {
+    color: white;
+    background-color: crimson;
+    width: 100%;
+    font-weight: 900;
+}
+
+@keyframes text_reveal_box {
+    50%{
+        width: 100%;
+        left: 0;
+    }
+    100%{
+        width: 0;
+        left: 100%;
+    }
+}
+
+@keyframes text_reveal{
+    100%{
+        color: white;
+    }
+}
+
+@keyframes text_reveal_name{
+    100%{
+        color: #01BF71;
+        font-weight: 500;
+        width: 100%;
+        font-weight: 900;
+    }
+}
 
     @media screen and (max-width: 768px) {
-        font-size: 40px;
+        font-size: 60px;
     }
 
     @media screen and (max-width:480px) {
         font-size: 32px;
+        width: 100%;
+        font-weight: 900;
     }
 `
 export const HeroP = styled.p`

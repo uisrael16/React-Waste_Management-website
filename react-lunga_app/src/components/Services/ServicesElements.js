@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const ServicesContainer = styled.div `
+export const Container = styled.div `
     height: 800px;
     display: flex;
     flex-direction: column;
@@ -8,11 +8,11 @@ export const ServicesContainer = styled.div `
     align-items: center;
     background: white;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 968px) {
         height: 1100px;
     }
 
-    @media screen and (max-width: 480px){
+    @media screen and (max-width: 980px){
         height: 1300px;
     }
 `
@@ -41,7 +41,7 @@ export const ServicesCard = styled.div `
     justify-content: flex-start;
     align-items: center;
     border-radius: 10px;
-    max-height: 340px;
+    max-height: 640px;
     padding: 30px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.2);
     transition: all 0.2s ease-in-out;
@@ -51,7 +51,8 @@ export const ServicesCard = styled.div `
         transition: all 0.2s ease-in-out;
         cursor: pointer;
     }
-`
+`;
+
 export const ServicesIcon = styled.img`
     height: 160px;
     width: 160px;
@@ -74,4 +75,7 @@ margin-bottom: 10px;
 export const ServicesP = styled.p`
 font-size: 1rem;
 text-align: center;
+text-align: justify; /* For Edge */
+  -moz-text-align-last: justify; /* For Firefox prior 58.0 */
+  text-align-last: justify;
 `

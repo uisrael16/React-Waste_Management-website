@@ -1,6 +1,7 @@
-import React from 'react'
-import {FaBars} from 'react-icons/fa';
-import gatsbyIcon from "../../images/icon6.jpg";
+import React, {useState, useEffect} from 'react'
+import { AiOutlineQrcode } from "react-icons/ai";
+import gatsbyIcon from "../../images/icon2.png";
+import "../Footer/"
 import{
     Nav, 
     NavbarContainer, 
@@ -12,40 +13,55 @@ import{
     NavBtn,
     NavBtnLink,
 } from './NavbarElements'
-
+import {IconContext} from 'react-icons/lib'
 
 
 const Navbar = ({ toggle }) => {
-
+    const[scrollNav, setScrollNav] = useState(false); 
     
+    const changeNav = ()=> {
+        if(window.scrollY >= 80) {
+            setScrollNav(true)
+        }else {
+            setScrollNav(false)
+        }
+    };
+
+//Just to make sure this thing doesn't go crazy    
+useEffect(() => {
+    window.addEventListener('scroll', changeNav)
+}, []);
+
     return (
         <>
-            <Nav>
+        <IconContext.Provider value={{ color: '#01BF71'}}>
+            <Nav scrollNav={scrollNav}>
                 <NavbarContainer>
-                   <NavLogo   src={gatsbyIcon}>
+                   <NavLogo to='/'  src={gatsbyIcon}>
                    </NavLogo>
                    <MobileIcon onClick={toggle}>
-                       <FaBars />
+                       <AiOutlineQrcode />
                    </MobileIcon>
                    <NavMenu>
+                   <NavItem>
+                           <NavLinks to='discover'>About</NavLinks>
+                        </NavItem>
                        <NavItem>
-                           <NavLinks to='about'>About</NavLinks>
+                           <NavLinks to='about'>Discover</NavLinks>
                         </NavItem>
                         <NavItem>
-                           <NavLinks to='discover'>Discover</NavLinks>
+                           <NavLinks to='services'>Services</NavLinks>
                         </NavItem>
                         <NavItem>
-                           <NavLinks to='service'>Service</NavLinks>
-                        </NavItem>
-                        <NavItem>
-                           <NavLinks to='singnup'>Sign Up</NavLinks>
+                           <NavLinks to='signin'>Send us email</NavLinks>
                         </NavItem>
                    </NavMenu>
                    <NavBtn>
-                     <NavBtnLink to="/singnin">Sign In</NavBtnLink>  
+                     {/* <NavBtnLink to="/foot">Talk To Us</NavBtnLink>   */}
                    </NavBtn>
                 </NavbarContainer>
             </Nav>
+            </IconContext.Provider>
         </>
     );
 };

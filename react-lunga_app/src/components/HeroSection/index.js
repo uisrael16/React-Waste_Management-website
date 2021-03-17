@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 // import React from 'react' 
 import{Button} from '../ButtonElements'
 import Video from '../../videos/video.mp4';
+import signin from '../Signin/Signin'
 import { HeroContainer, 
     HeroBg, 
     VideoBg, 
@@ -20,21 +21,21 @@ const HeroSection = () => {
     } 
 
     return (
-        <HeroContainer id="home">
+        <HeroContainer >
             <HeroBg>
                 <VideoBg autoPlay loop muted src={Video} type='video/mp4' />
             </HeroBg>
             <HeroContent>
-               <HeroH1>Help To Keep The Environment Clean</HeroH1>
-               <HeroP>Make qoutations today... or send us an email.</HeroP>
+               <HeroH1>Ubuhlebezwe Waste Solutions</HeroH1>
+               <HeroP>Claiming the land back from waste.</HeroP>
                <HeroBtnWrapper>
-                   <Button to='signup' 
+                   <Button  onClick={signin}
                    onMouseEnter={onHover} 
                    onMouseLeave={onHover}
                    primary='true'
                    dark='true'
                    >
-                    Get started{hover ? <ArrowForward /> : <ArrowRight
+                    Send us email{hover ? <ArrowForward /> : <ArrowRight
                      />}
                      </Button>
                 </HeroBtnWrapper> 
